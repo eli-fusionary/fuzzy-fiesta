@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "paths": {
+      "@local/env/*": ["src/*.ts"],
+      "@local/env/helpers/*": ["src/helpers/*.ts"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "exclude": ["node_modules"],
+  "extends": "@local/tsconfig/internal-package.json"
+}

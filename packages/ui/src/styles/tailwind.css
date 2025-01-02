@@ -1,0 +1,21 @@
+@tailwind utilities;
+
+@layer utilities {
+  input[type='number'].arrow-hide::-webkit-outer-spin-button,
+  input[type='number'].arrow-hide::-webkit-inner-spin-button,
+  input[type='number'].arrow-hide {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+html {
+  font-size: 18px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}

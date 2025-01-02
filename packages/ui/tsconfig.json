@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "paths": {
+      "@local/ui/*": ["src/components/*/index.ts"],
+      "@local/ui/cn": ["src/utils/cn/index.ts"],
+      "@local/ui/hooks/*": ["src/hooks/*/index.ts"],
+      "@local/ui/types/*": ["src/types/*/index.ts"],
+      "@local/ui/utils/*": ["src/utils/*/index.ts"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "exclude": ["node_modules"],
+  "extends": "@local/tsconfig/internal-package.json"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "@local/payload",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*.ts",
+    "./access/*": "./src/access/*/index.ts",
+    "./blocks/*": "./src/blocks/*/index.ts",
+    "./collections/*": "./src/collections/*/index.ts",
+    "./components/*": "./src/components/*/index.ts",
+    "./fields/*": "./src/fields/*/index.ts",
+    "./globals/*": "./src/globals/*/index.ts",
+    "./helpers/*": "./src/helpers/*/index.ts",
+    "./hooks/*": "./src/hooks/*/index.ts",
+    "./plugins/*": "./src/plugins/*/index.ts",
+    "./payload-types": "./src/payload.types.ts",
+    "./payload-config": "./src/payload.config.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules .pnpm-lock.yaml",
+    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path ./.prettierignore",
+    "generate:types": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
+    "lint": "eslint .",
+    "reinstall": "pnpm clean && pnpm i",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@local/prettier-config",
+  "dependencies": {
+    "@local/env": "workspace:*",
+    "@local/svg": "workspace:*",
+    "@local/ui": "workspace:*",
+    "@local/utils": "workspace:*",
+    "@payloadcms/db-mongodb": "^3.12.0",
+    "@payloadcms/graphql": "^3.12.0",
+    "@payloadcms/live-preview-react": "^3.12.0",
+    "@payloadcms/plugin-nested-docs": "^3.12.0",
+    "@payloadcms/plugin-redirects": "^3.12.0",
+    "@payloadcms/plugin-seo": "^3.12.0",
+    "@payloadcms/richtext-lexical": "^3.12.0",
+    "@payloadcms/ui": "^3.12.0",
+    "lexical": "0.20.0",
+    "next": "catalog:next15",
+    "payload": "^3.12.0",
+    "react": "catalog:next15",
+    "react-dom": "catalog:next15",
+    "sharp": "^0.33.5",
+    "ts-pattern": "^5.6.0"
+  },
+  "devDependencies": {
+    "@local/eslint-config": "workspace:*",
+    "@local/prettier-config": "workspace:*",
+    "@local/tsconfig": "workspace:*",
+    "@local/types": "workspace:*",
+    "@types/node": "^20.17.10",
+    "@types/react": "catalog:next15",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "watch": {
+    "generate:types": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts,tsx",
+      "quiet": false
+    }
+  }
+}

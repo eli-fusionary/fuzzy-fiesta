@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-outside-of-docker
+{
+  "containerEnv": {
+    "PAYLOAD_PRIVATE_DATABASE_URI": "mongodb://mongo:27017/payload"
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "amazonwebservices.aws-toolkit-vscode",
+        "bradlc.vscode-tailwindcss",
+        "csstools.postcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-rename-tag",
+        "ghmcadams.lintlens",
+        "meganrogge.template-string-converter",
+        "mikestead.dotenv",
+        "ms-vsliveshare.vsliveshare",
+        "pflannery.vscode-versionlens",
+        "streetsidesoftware.code-spell-checker",
+        "unifiedjs.vscode-mdx",
+        "wix.vscode-import-cost",
+        "DavidAnson.vscode-markdownlint",
+        "YoavBls.pretty-ts-errors"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono"
+      }
+    }
+  },
+  "dockerComposeFile": ["docker-compose.yml"],
+  "features": {
+    "ghcr.io/devcontainers-extra/features/act:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+      "plugins": "ssh-agent npm",
+      "username": "vscode"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "terragrunt": "latest",
+      "tflint": "latest",
+      "version": "latest"
+    },
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+  },
+  "forwardPorts": [3000],
+  "mounts": [
+    "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind"
+  ],
+  "name": "Node.js & Mongo DB",
+  "postCreateCommand": "oh-my-posh font install FiraMono && /bin/zsh -c \"eval \\\"$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines)\\\"\" && pnpm i && echo 'eval \"$(oh-my-posh init zsh)\"' >> ~/.zshrc",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+}

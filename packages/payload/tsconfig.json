@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "paths": {
+      "@local/payload/*": ["./src/*"],
+      "@local/payload/access/*": ["./src/access/*"],
+      "@local/payload/blocks/*": ["./src/blocks/*"],
+      "@local/payload/collections/*": ["./src/collections/*"],
+      "@local/payload/components/*": ["./src/components/*"],
+      "@local/payload/fields/*": ["./src/fields/*"],
+      "@local/payload/globals/*": ["./src/globals/*"],
+      "@local/payload/helpers/*": ["./src/helpers/*"],
+      "@local/payload/hooks/*": ["./src/hooks/*"],
+      "@local/payload/payload-config": ["./src/payload.config"],
+      "@local/payload/payload-types": ["./src/payload.types"],
+      "@local/payload/plugins/*": ["./src/plugins/*"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+  },
+  "exclude": ["node_modules", "src/payload.types.ts", ".next"],
+  "extends": "@local/tsconfig/base.json"
+}

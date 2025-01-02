@@ -1,0 +1,24 @@
+{
+  "name": "@local/themes",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "exports": {
+    "./default.css": "./src/default/index.css"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint ."
+  },
+  "prettier": "@local/prettier-config",
+  "devDependencies": {
+    "@local/prettier-config": "workspace:*",
+    "@types/node": "^20.17.10",
+    "prettier": "^3.4.2"
+  }
+}

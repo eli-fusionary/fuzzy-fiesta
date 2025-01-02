@@ -1,0 +1,5 @@
+# Creating SVGs
+
+Best practices for creating SVGs.
+
+Go to [SVGR](https://react-svgr.com/playground/?exportType=named&jsxRuntime=automatic&memo=true&namedExport=ComponentName&ref=true&svgoConfig=%7B%0A%20%20%22plugins%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22preset-default%22%2C%0A%20%20%20%20%20%20%22params%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22overrides%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22removeTitle%22%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%22removeViewBox%22%3A%20false%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D&typescript=true). On that page, in the sidebar change the component name from ComponentName to the name of the component that you want exported. Paste the contents of the SVG in the left pane. The resultant React component will be in the right pane. Copy the contnents and create a corresponding component in this repo and paste the contents. Then export the newly created component.

@@ -1,0 +1,16 @@
+/** overriding the one trust button styling **/
+.ot-sdk-show-settings {
+  color: unset !important;
+  border: unset !important;
+  height: unset !important;
+  white-space: unset !important;
+  word-wrap: unset !important;
+  padding: unset !important;
+  font-size: unset !important;
+  line-height: unset !important;
+  text-align: unset !important;
+}
+.ot-sdk-show-settings:focus,
+.ot-sdk-show-settings:hover {
+  background-color: unset !important;
+}
