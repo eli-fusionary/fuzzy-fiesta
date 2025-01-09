@@ -40,7 +40,11 @@ export const RootLayout: FC<RootLayoutProps> = ({
   >
     <head>{head}</head>
     <body>
-      <div className="relative isolate flex min-h-svh w-full flex-col bg-background">
+      <div className="flex min-h-svh w-full flex-col bg-background">
+        <div className="h-[32px] w-full overflow-x-hidden bg-background">
+          <div className="h-1 w-[45%] animate-slide-left-to-right bg-brandPrimary ease-linear duration-2s repeat-infinite" />
+        </div>
+        <div className="size-[50px] animate-bounce rounded-full bg-brandPrimary" />
         {header}
         <Slot className="grow">{children}</Slot>
         {footer}

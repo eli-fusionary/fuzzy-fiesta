@@ -1,14 +1,6 @@
 {
   "configurations": [
     {
-      "command": "pnpm dev --filter web...",
-      "cwd": "${workspaceFolder}/",
-      "name": "Web",
-      "request": "launch",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node-terminal"
-    },
-    {
       "command": "pnpm dev --filter payload...",
       "cwd": "${workspaceFolder}/",
       "name": "Payload",
